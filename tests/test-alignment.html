@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>Test: Alignment</title>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+	<style>
+* { margin: 0; box-sizing: content-box; }
+html, body { width:100%; width:100%; overflow: hidden; }
+	</style>
+</head>
+<body>
+	<script type="importmap" nonce="test">
+{ "imports": { "three": "../node_modules/three/build/three.module.js" } }
+	</script>
+	<script type="module" nonce="test">
+import { TestEnvironment } from "./js/TestEnvironment.js";
+
+// Initialize the test environment
+let test = TestEnvironment.init();
+
+// Create three text to show the three alignments
+test.addText({string: 'Text Alignment:\nLeft', align: 'left'}, '', 0, 3, true);
+test.addText({string: 'Text Alignment:\nCenter', align: 'center'}, '', 0, 0, true);
+test.addText({string: 'Text Alignment:\nRight', align: 'right'}, '', 0, -3, true);
+
+	</script>
+</body>
+</html>

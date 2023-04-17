@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>Test: Anchors</title>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+	<style>
+* { margin: 0; box-sizing: content-box; }
+html, body { width:100%; width:100%; overflow: hidden; }
+	</style>
+</head>
+<body>
+	<script type="importmap" nonce="test">
+{ "imports": { "three": "../node_modules/three/build/three.module.js" } }
+	</script>
+	<script type="module" nonce="test">
+import { TestEnvironment } from "./js/TestEnvironment.js";
+
+// Initialize the test environment
+let test = TestEnvironment.init();
+
+// Create nine texts to show the effect of the anchor parameter
+test.addText({string: 'Text Anchor:\n"top-left"', anchor: 'top-left'}, '', 3, -2, true);
+test.addText({string: 'Text Anchor:\n"top"', anchor: 'top'}, '', 0, -2, true);
+test.addText({string: 'Text Anchor:\n"top-right"', anchor: 'top-right'}, '', -3, -2, true);
+test.addText({string: 'Text Anchor:\n"left"', anchor: 'left'}, '', 3, 0, true);
+test.addText({string: 'Text Anchor:\n"middle" | ""', anchor: ''}, '', 0, 0, true);
+test.addText({string: 'Text Anchor:\n"right"', anchor: 'right'}, '', -3, 0, true);
+test.addText({string: 'Text Anchor:\n"bottom-left"', anchor: 'bottom-left'}, '', 3, 2, true);
+test.addText({string: 'Text Anchor:\n"bottom"', anchor: 'bottom'}, '', 0, 2, true);
+test.addText({string: 'Text Anchor:\n"bottom-right"', anchor: 'bottom-right'}, '', -3, 2, true);
+
+	</script>
+</body>
+</html>

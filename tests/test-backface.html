@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>Test: Backface</title>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+	<style>
+* { margin: 0; box-sizing: content-box; }
+html, body { width:100%; width:100%; overflow: hidden; }
+	</style>
+</head>
+<body>
+	<script type="importmap" nonce="test">
+{ "imports": { "three": "../node_modules/three/build/three.module.js" } }
+	</script>
+	<script type="module" nonce="test">
+import { TestEnvironment } from "./js/TestEnvironment.js";
+
+// Initialize the test environment
+let test = TestEnvironment.init();
+
+// Create three texts to show the effect of the backface parameter
+let text1 = test.addText({string: 'Backface:\n"none"', backface: 'none'}, '', 0, 3, true);
+let text2 = test.addText({string: 'Backface:\n"normal"', backface: 'normal'}, '', 0, 0, true);
+let text3 = test.addText({string: 'Backface:\n"mirrored"', backface: 'mirrored'}, '', 0, -3, true);
+
+// Rotate the texts to show the backface
+test.onUpdate = (timestamp, deltaTime) => { 
+	text1.rotateY(deltaTime); text2.rotateY(deltaTime); text3.rotateY(deltaTime); 
+}
+	</script>
+</body>
+</html>

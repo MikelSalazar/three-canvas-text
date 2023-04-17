@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>Test: Padding</title>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+	<style>
+* { margin: 0; box-sizing: content-box; }
+html, body { width:100%; width:100%; overflow: hidden; }
+	</style>
+</head>
+<body>
+	<script type="importmap" nonce="test">
+{ "imports": { "three": "../node_modules/three/build/three.module.js" } }
+	</script>
+	<script type="module" nonce="test">
+import { TestEnvironment } from "./js/TestEnvironment.js";
+
+// Initialize the test environment
+let test = TestEnvironment.init();
+
+// Create three texts to show the effect of the padding parameter
+test.addText({string: 'Padding:\n0%', padding: 0}, '', 0, 3, true);
+test.addText({string: 'Padding:\n50%', padding: 0.5}, '', 0, 0, true);
+test.addText({string: 'Padding:\n100%', padding: 1}, '', 0, -3, true);
+
+</script>
+</body>
+</html>

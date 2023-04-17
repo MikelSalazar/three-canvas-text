@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>Test: Unicode</title>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+	<style>
+* { margin: 0; box-sizing: content-box; }
+html, body { width:100%; width:100%; overflow: hidden; }
+	</style>
+</head>
+<body>
+	<script type="importmap" nonce="test">
+{ "imports": { "three": "../node_modules/three/build/three.module.js" } }
+	</script>
+	<script type="module" nonce="test">
+import { TestEnvironment } from "./js/TestEnvironment.js";
+
+// Initialize the test environment
+let test = TestEnvironment.init();
+
+// https://en.wikipedia.org/wiki/List_of_Unicode_characters
+// See: https://www.cogsci.ed.ac.uk/~richard/unicode-sample.html
+
+// [ㄱ, ㄲ, ㄳ, ㄴ, ㄵ, ㄶ, ㄷ, ㄸ, ㄹ, ㄺ, ㄻ, ㄼ, ㄽ, ㄾ, ㄿ, ㅀ, ㅁ, ㅂ, ㅃ, ㅄ, ㅅ, ㅆ, ㅇ, ㅈ, ㅉ, ㅊ, ㅋ, ㅌ, ㅍ, ㅎ, ㅏ, ㅐ, ㅑ, ㅒ, ㅓ, ㅔ, ㅕ, ㅖ, ㅗ, ㅘ, ㅙ, ㅚ, ㅛ, ㅜ, ㅝ, ㅞ, ㅟ, ㅠ, ㅡ, ㅢ, ㅣ, ㅤ, ㅥ, ㅦ, ㅧ, ㅨ, ㅩ, ㅪ, ㅫ, ㅬ, ㅭ, ㅮ, ㅯ, ㅰ, ㅱ, ㅲ, ㅳ, ㅴ, ㅵ, ㅶ, ㅷ, ㅸ, ㅹ, ㅺ, ㅻ, ㅼ, ㅽ, ㅾ, ㅿ, ㆀ, ㆁ, ㆂ, ㆃ, ㆄ, ㆅ, ㆆ, ㆇ, ㆈ, ㆉ, ㆊ, ㆋ, ㆌ, ㆍ, ㆎ]
+
+
+// Create several texts with the fonts
+test.addText({string: 'ㄱㄲㄳㄴㄵㄶㄷㄸㄹㄺㄻㄼㄽㄾㄿㅀㅁㅂㅃㅄ'}, '', 0, 4.5, true);
+test.addText({string: 'अआइईउऊऋऌऍऎएऐऑऒओऔकखगघङचछजझ'}, '', 0, 3.0, true);
+test.addText({string: 'あいうおかがきぎくぐけげこごさざしじすず♈ '}, '', 0, 1.5, true);
+	</script>
+</body>
+</html>
