@@ -1,0 +1,34 @@
+{
+  "name": "three-canvas-text",
+  "version": "0.1.2",
+  "description": "Canvas-based bitmap text generation system for ThreeJS.",
+  "author": "Mikel Salazar",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MikelSalazar/three-canvas-text.git"
+  },
+  "license": "MIT",
+  "main": "builds/three-canvas-text.js",
+  "types": "builds/three-canvas-text.d.ts",
+  "scripts": {
+    "rebuild": "node utilities/build/build.mjs",
+    "test": "electron utilities/test/test.cjs"
+  },
+  "keywords": [
+    "canvas",
+    "text", 
+    "text rendering",
+    "ThreeJS"
+  ],
+  "files": [ "builds", "docs", "sources", "tests" ],
+  "directories": {
+    "bin": "builds",
+    "doc": "docs",
+    "src": "sources"
+  },
+  "dependencies": {
+    "three": "^0.144.0",
+    "@types/three": "^0.144.0"
+  }
+}
